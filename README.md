@@ -16,7 +16,8 @@ This will do all the stuff for you, it will build the image download the ns3 sou
 4. `make run`
 5. `cd ns3/ns-3.26`
 6. `./waf configure`
-  > ```
+  > 
+  ```
   ---- Summary of optional NS-3 features:
   Build profile                 : debug
   Build directory               :
@@ -54,4 +55,9 @@ To make sure that it works, in the container run:
 4. `cd ..`
 5. `./waf --run example --vis`
   it should compile then run the visualization in xQuartz.
+  
+### Troubleshooting
+1. Make sure you allow connetions from network clients in XQuartz (Preferences -> Security)
+2. Make sure that local xquartz socket is exposed on a TCP port. `lsof -i TCP:6000`
+3. Check this thread https://github.com/moby/moby/issues/8710
   
