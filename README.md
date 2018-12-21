@@ -6,7 +6,13 @@ Docker image for NS-3 Network Simulator with GUI Support on OSX
 
 Clone the repo then run:
 ```make```
-This will do all the stuff for you, it will build the image download the ns3 source and setup the X server for you.
+This will download the ns3 version 3.26 and build the docker image for you.
+
+If you don't want the ns3 src files in the host machine for development you can download ns3 inside the image by replacing the line `COPY . /usr` in Dockerfile with these lines:
+```
+RUN wget http://www.nsnam.org/release/ns-allinone-3.26.tar.bz2
+RUN tar -xf ns-allinone-3.26.tar.bz2
+```
 
 ### GUI prerequisites & steps for macOS:
 
